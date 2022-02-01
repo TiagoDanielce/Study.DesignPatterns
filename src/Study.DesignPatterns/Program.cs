@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Study.DesignPatterns.AbstractFactory;
+using System;
 
 namespace Study.DesignPatterns
 {
@@ -8,6 +9,14 @@ namespace Study.DesignPatterns
         {
             SingletonTest();
             FactoryMethodTest();
+
+            Console.ReadKey();
+        }
+
+        private static void AbstractFactoryTest()
+        {
+            Person swedishPerson = ExecuteAbstractFactory.BuildPerson(EPersonType.Swedish);
+            Person brazilianPerson = ExecuteAbstractFactory.BuildPerson(EPersonType.Brazilian);
 
             Console.ReadKey();
         }
