@@ -1,5 +1,6 @@
 ﻿using Study.DesignPatterns.AbstractFactory;
 using Study.DesignPatterns.Builder;
+using Study.DesignPatterns.Prototype;
 using System;
 
 namespace Study.DesignPatterns
@@ -12,6 +13,7 @@ namespace Study.DesignPatterns
             FactoryMethodTest();
             AbstractFactoryTest();
             BuilderTest();
+            PrototypeTest();
 
             Console.ReadKey();
         }
@@ -34,6 +36,14 @@ namespace Study.DesignPatterns
         {
             Person swedishPerson = ExecuteAbstractFactory.BuildPerson(EPersonType.Swedish);
             Person brazilianPerson = ExecuteAbstractFactory.BuildPerson(EPersonType.Brazilian);
+
+            Console.ReadKey();
+        }
+
+        private static void PrototypeTest()
+        {
+            var customer = new Customer() { Name = "John", Email = "john@gmail.com", Document = "1234567890" };
+            var customerCopy = (Customer)customer.Clone();
 
             Console.ReadKey();
         }
