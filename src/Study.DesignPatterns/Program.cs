@@ -1,4 +1,5 @@
 ﻿using Study.DesignPatterns.AbstractFactory;
+using Study.DesignPatterns.Builder;
 using System;
 
 namespace Study.DesignPatterns
@@ -9,6 +10,22 @@ namespace Study.DesignPatterns
         {
             SingletonTest();
             FactoryMethodTest();
+            AbstractFactoryTest();
+            BuilderTest();
+
+            Console.ReadKey();
+        }
+
+        private static void BuilderTest()
+        {
+            var computer = new ComputerBuilder()
+                .WithCpuManufacturer(ECpuManufacturer.AMD)
+                .WithCpuModel("Ryzen 5 3600x")
+                .WithMotherBoardCompatibility(EMotherBoardCompatibility.AMD)
+                .WithMotherBoardModel("Gigabyte Aorus B450")
+                .WithRamMemoryManufacturer(ERamMemoryManufacturer.Crucial)
+                .WithRamMemorySize(32)
+                .Build();
 
             Console.ReadKey();
         }
